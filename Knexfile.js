@@ -3,13 +3,13 @@ module.exports = {
     development: {
       client: 'sqlite3',
       connection: {
-        filename: './src/database/carAuto.sqlite'
+        filename: './BackendApi/src/database/carAuto.sqlite'
       },
       migrations : {
-        directory : './src/database/migrations'
+        directory : './BackendApi/src/database/migrations',
       },
       seeds: {
-        directory: './src/database/seeds',
+        directory: './BackendApi/src/database/seeds',
       },
       useNullAsDefault : true
     },

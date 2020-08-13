@@ -2,7 +2,8 @@ const express = require('express');
 const routes = require('./router');
 const cors = require('cors');
 const nunjucks = require('nunjucks')
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const {errors} = require ('celebrate');
 
 
 const app = express();
@@ -23,6 +24,7 @@ nunjucks.configure("src/app/view",{
     noCache: true
 })
 
+app.use(errors());
 
 module.exports = app;
 

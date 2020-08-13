@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all -p nodemon browsersync",
-    "nodemon": "nodemon src/server.js",
+    "nodemon": "nodemon BackendApi/src/server.js",
     "browsersync": "browser-sync start --proxy http://localhost:5000 --files'view , public'",
     "test": "cross-env NODE_ENV=test jest"
   },
@@ -13,10 +13,11 @@
   "author": "Leonarod Guedes",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^14.0.27",
     "celebrate": "^12.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "knex": "^0.21.2",
+    "knex": "^0.21.4",
     "method-override": "^3.0.0",
     "nunjucks": "^3.2.2",
     "sqlite3": "^5.0.0",
@@ -27,6 +28,8 @@
     "browser-sync": "^2.26.12",
     "jest": "^26.1.0",
     "npm-run-all": "^4.1.5",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   }
 }

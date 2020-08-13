@@ -7,7 +7,16 @@ module.exports  =   {
         const Cars = await connection('Cars').select('*');
         return response.status(200).json(Cars);
     },
+    async show(request ,response){
+        const {id} = request.params;
 
+        const Cars = await connection('Cars').where('id',id).first();
+        if(!Cars)
+            return response.status(400).json({message : "Carro não existe."});
+           
+        return response.status(200).json(Cars);
+
+    },
     async create(request, response) {
        const { id_Fabricante, NomeCarro, Ano,Modelo} = request.body;        
         const id = id_Fabricante;

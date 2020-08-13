@@ -7,6 +7,16 @@ module.exports  =   {
         return response.status(200).json(Car_Manufactures);
     },
 
+    async show(request ,response){
+        const {id} = request.params;
+
+        const Car_Manufactures = await connection('Car_Manufactures').where('id',id).first();
+        if(!Car_Manufactures)
+            return response.status(400).json({message : "Fabricante não existe."});
+           
+        return response.status(200).json(Car_Manufactures);
+
+    },
     async post(request, response) {
 
          let { name,fabricante_url} = request.body;
@@ -31,9 +41,9 @@ module.exports  =   {
             
             car_manufacuture.name = name;
             
-            const putCars_manufacture = await connection('Car_Manufactures').where({id}).update({name});
+            await connection('Car_Manufactures').where({id}).update({name});
 
-            return response.status(2000,).json(putCars_manufacture);
+            return response.status(200).json({message : "Atualizado com Sucesso!!"});
         }catch(error){
             
             if(error.errno === 19){
@@ -63,11 +73,11 @@ module.exports  =   {
                 await connection('Car_Manufactures').where({id}).delete();
                 return response.status(200).json({message : `${car_manufacuture[0].name} deletado com sucesso!!`}); 
             }else{
-                response.json({message : `${car_manufacuture[0].name} Não pode ser excluido , pois existem informações relacionada a eles.`});
+                 return response.json({message : `${car_manufacuture[0].name} Não pode ser excluido , pois existem informações relacionada a eles.`});
             }
     
         }catch(error){
-            response.status(404).send({error :[`O Fabricante "${id}"não existe em nossos registros`]});
+            return response.status(404).send({error :[`O Fabricante "${id}"não existe em nossos registros`]});
         }    
     },
 }   
