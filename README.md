@@ -43,7 +43,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 1. Faça um clone :
 
 ```sh
-  $ git clone https://github.com/Guedesleo/AutomotivePartsSupplier
+  $ git clone https://github.com/Guedesleo/AutomotivePartsSupplier.git/
 ```
 
 2. Executando a Aplicação:
