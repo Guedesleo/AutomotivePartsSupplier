@@ -21,7 +21,6 @@
 ## :bookmark: Sobre
 O Automotive Parts Supplier é uma aplicação de auto peças, onde o vendedor consiga atravez dos dados informado pelo  cliente esta pedindo , saber se tem na loja ou não .
 
-## 🚀 Tecnologias
 <a id="tecnologias-utilizadas"></a>
 
 ## :rocket: Tecnologias Utilizadas
