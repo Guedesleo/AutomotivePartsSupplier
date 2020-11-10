@@ -5,9 +5,9 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('Parts_Types').insert([
-        {Description_Types: 'Cambio'},
-        {Description_Types: 'Girabregim'},
-        {Description_Types: 'Jogo de Tucho'}
+        {Description_Types: 'Engine components and parts'},
+        {Description_Types: 'Braking system'},
+        {Description_Types: 'Suspension and steering systems'}
       ]);
     });
 };

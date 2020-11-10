@@ -1,0 +1,13 @@
+.table-container{
+    margin-top: 8%;
+    display: block;
+    padding: 40px;
+    box-sizing: border-box
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+.table-container thead tr th {
+    text-align: left;
+}

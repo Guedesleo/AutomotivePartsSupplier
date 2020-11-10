@@ -1,12 +1,21 @@
 import React from 'react';
 import './App.css';
+import {ThemeProvider} from 'styled-components';
+import light from './styles/themes/light';
 
-// import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './containers/Dashboard';
+import GlobalStyles from './styles/global';
 
-function App() {
+const App = () => {
+
+
   return (
-      <Dashboard/>
+    <ThemeProvider theme={light}>
+      <div>
+        <GlobalStyles/>
+        <Dashboard/>
+      </div>
+   </ThemeProvider>
   );
 }
 
